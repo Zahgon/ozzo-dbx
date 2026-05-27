@@ -13,11 +13,7 @@ type Tx struct {
 }
 
 // Commit commits the transaction.
-func (t *Tx) Commit() error {
-	return t.tx.Commit()
-}
+func (t *Tx) Commit() error { _ = "STUB: not implemented"; return nil }
 
 // Rollback aborts the transaction.
-func (t *Tx) Rollback() error {
-	return t.tx.Rollback()
-}
+func (t *Tx) Rollback() error { _ = "STUB: not implemented"; return nil }

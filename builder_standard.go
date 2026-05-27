@@ -14,26 +14,28 @@ var _ Builder = &StandardBuilder{}
 
 // NewStandardBuilder creates a new StandardBuilder instance.
 func NewStandardBuilder(db *DB, executor Executor) Builder {
-	return &StandardBuilder{
-		NewBaseBuilder(db, executor),
-		NewBaseQueryBuilder(db),
-	}
+	_ = "STUB: not implemented"
+	return *new(Builder)
 }
 
 // QueryBuilder returns the query builder supporting the current DB.
 func (b *StandardBuilder) QueryBuilder() QueryBuilder {
-	return b.qb
+	_ = "STUB: not implemented"
+
+	// Select returns a new SelectQuery object that can be used to build a SELECT statement.
+	// The parameters to this method should be the list column names to be selected.
+	// A column name may have an optional alias name. For example, Select("id", "my_name AS name").
+	return *new(QueryBuilder)
 }
 
-// Select returns a new SelectQuery object that can be used to build a SELECT statement.
-// The parameters to this method should be the list column names to be selected.
-// A column name may have an optional alias name. For example, Select("id", "my_name AS name").
 func (b *StandardBuilder) Select(cols ...string) *SelectQuery {
-	return NewSelectQuery(b, b.db).Select(cols...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Model returns a new ModelQuery object that can be used to perform model-based DB operations.
 // The model passed to this method should be a pointer to a model struct.
 func (b *StandardBuilder) Model(model interface{}) *ModelQuery {
-	return NewModelQuery(model, b.db.FieldMapper, b.db, b)
+	_ = "STUB: not implemented"
+	return nil
 }
